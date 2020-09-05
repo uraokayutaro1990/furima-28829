@@ -6,7 +6,8 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use sqlite3 as the database for Active Record
-#削除 gem 'sqlite3', '~> 1.4'
+# gem 'sqlite3', '~> 1.4'
+gem 'mysql2', '>= 0.4.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -63,6 +64,3 @@ group :production do
 end
 #9/5 作ったベーシック認証をデプロイするために、rails_12factorを導入
 
-group :development, :test do
-  gem 'sqlite3'
-end
