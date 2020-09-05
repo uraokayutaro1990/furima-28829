@@ -57,3 +57,8 @@ group :development do
   gem 'rubocop', require: false
 end
 #9/4追記　Rubyの静的コード解析ツール
+
+group :production do
+  gem 'rails_12factor'
+end
+#9/5 作ったベーシック認証をデプロイするために、rails_12factorを導入
