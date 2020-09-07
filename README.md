@@ -22,8 +22,7 @@
 
 ### Association
 
-・has_many :buyer_items
-・has_one :buyer_items
+・has_many :items , through :buyer_items
 
 
 ### itemsテーブル
@@ -35,10 +34,11 @@
 | price          | integer    | null: false |
 
 Association
-・belongs_to :users
-・has_one :buyers_items
+・belongs_to :user
+・has_one :buyer_item
 
-### buyer_itemsテーブル
+
+### buyer_itemテーブル
 | Column             | Type       | Options
 | ------------------ | ---------- | ---------- |
 | users              | references | 
@@ -46,8 +46,8 @@ Association
 
 Association
 
-・belongs_to :users
-・belongs_to :items
+・belongs_to :user
+・belongs_to :item
 ・has_one : deliver_address
 
 
@@ -69,8 +69,7 @@ Association
 
 ### Association
 
-・belongs_to :users
-・belongs_to :buyer_items
-・belong_to :items
+・belongs_to :buyer_item
+
 
 
