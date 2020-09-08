@@ -40,7 +40,7 @@ Association
 ・belongs_to :user 
 ・has_one :buyer_item 
 
-### buyer_itemテーブル
+### buyer_itemsテーブル
 | Column             | Type       | Options 
 | ------------------ | ---------- | ------------------------------ |
 | user               | references | null: false, foreign_key: true |
@@ -49,19 +49,19 @@ Association
 Association
 
 ・belongs_to :user 
-・belongs_to : 
+・belongs_to :item
 ・has_one :deliver_address
 
-### deliver_address テーブル
+### deliver_addresses テーブル
 
 | Column           | Type       | Options
 | ---------------- | ---------- | ----------- |
-| buyer_items_id   | integer    | null: false , foreign: true |
+| buyer_item_id   | integer    | null: false , foreign: true |
 | zip_code         | string     | null: false |
 | prefecture_id    | integer    | null: false |
 | city             | string     | null: false |
-| adress1          | string     | null: false | 
-| adress2          | string     | 
+| address          | string     | null: false | 
+| building          | string     | 
 | telephone        | string     | null: false |
 
 ### Association
