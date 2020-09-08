@@ -34,7 +34,7 @@ Association
 | nickname       | string     | null: false |
 | category       | string     | null: false |
 | condition	     | integer    | null: false |
-| postage        | integer    | null: false |
+| postage        | string    | null: false |
 | prefecture     | string     | null: false |
 | delivery_time  | string     | null: false |
 
