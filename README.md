@@ -15,6 +15,7 @@
 | first_name	            | string        | null: false |
 | family_name_kana        | string        | null: false |
 | first_name              | string        | null: false |
+| family_name              | string       | null: false |
 | birthday                | date          | null: false |
 
 Association 
@@ -23,16 +24,16 @@ Association
 ・has_many : buyer_items 
 
 ### itemsテーブル
-| Column         | Type       | Options
-| -------------- | ---------- | ----------  |
-| name           | string     | null: false |
-| price          | integer    | null: false |
-| text           | text       | null: false |
-| category       | string     | null: false |
-| condition	     | integer    | null: false |
-| postage        | string     | null: false |
-| prefecture     | string     | null: false |
-| delivery_time  | string     | null: false |
+| Column            | Type       | Options
+| ----------------  | ---------- | ----------  |
+| name              | string     | null: false |
+| price             | integer    | null: false |
+| text              | text       | null: false |
+| category_id       | integer    | null: false |
+| condition_id	    | integer    | null: false |
+| postage_id        | integer    | null: false |
+| prefecture_id     | integer    | null: false |
+| delivery_time_id  | integer    | null: false |
 
 Association 
 ・belongs_to :user 
@@ -43,27 +44,27 @@ Association
 | ------------------ | ---------- | ------------------------------ |
 | user               | references | null: false, foreign_key: true |
 | item               | references | null: false, foreign_key: true |
-| user_id            | integer    | null: false                    |
 
 Association
 
 ・belongs_to :user
-・belongs_to :item
+・belongs_to :
+・has_one :deliver_address
 
 ### deliver_address テーブル
 
 | Column           | Type       | Options
 | ---------------- | ---------- | ----------- |
-| buyer_items_id   | integer    | null: false                    |
-| zip_code         | integer    | null: false |
-| prefecture_id    | integer    | null: false |
+| buyer_items_id   | integer    | null: false ,FK: true |
+| zip_code         | string     | null: false |
+| prefecture_id    | integer    | null: false ,FK: true |
 | city             | string     | null: false |
 | adress1          | string     | null: false | 
 | adress2          | string     |
 | telephone        | string     | null: false |
 
 ### Association
-・belongs_to :buyer_items
+・belongs_to :buyer_item
 
 
 
