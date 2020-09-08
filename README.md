@@ -15,7 +15,7 @@
 | first_name	            | string        | null: false |
 | family_name_kana        | string        | null: false |
 | first_name              | string        | null: false |
-| family_name              | string       | null: false |
+| family_name_kana             | string       | null: false |
 | birthday                | date          | null: false |
 
 Association 
@@ -25,7 +25,8 @@ Association
 
 ### itemsテーブル
 | Column            | Type       | Options
-| ----------------  | ---------- | ----------  |
+| ----------------  | ---------- | ----------- |
+| user_id | integer | null: false, foreign_key: true |
 | name              | string     | null: false |
 | price             | integer    | null: false |
 | text              | text       | null: false |
@@ -40,27 +41,27 @@ Association
 ・has_one :buyer_item 
 
 ### buyer_itemテーブル
-| Column             | Type       | Options
+| Column             | Type       | Options 
 | ------------------ | ---------- | ------------------------------ |
 | user               | references | null: false, foreign_key: true |
 | item               | references | null: false, foreign_key: true |
 
 Association
 
-・belongs_to :user
-・belongs_to :
+・belongs_to :user 
+・belongs_to : 
 ・has_one :deliver_address
 
 ### deliver_address テーブル
 
 | Column           | Type       | Options
 | ---------------- | ---------- | ----------- |
-| buyer_items_id   | integer    | null: false ,FK: true |
+| buyer_items_id   | integer    | null: false , foreign: true |
 | zip_code         | string     | null: false |
-| prefecture_id    | integer    | null: false ,FK: true |
+| prefecture_id    | integer    | null: false |
 | city             | string     | null: false |
 | adress1          | string     | null: false | 
-| adress2          | string     |
+| adress2          | string     | 
 | telephone        | string     | null: false |
 
 ### Association
