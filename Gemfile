@@ -47,6 +47,12 @@ group :development do
   #9/4追記　Rubyの静的コード解析ツール
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+  gem 'factory_bot_rails', '~> 5.0'
+end
+ #9/9追記テストコードのため
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
