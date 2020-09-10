@@ -14,8 +14,7 @@
 | family_name             | string        | null: false |
 | first_name              | string        | null: false |
 | family_name_kana        | string        | null: false |
-| first_name              | string        | null: false |
-| family_name_kana             | string       | null: false |
+| first_name_kana         | string        | null: false |
 | birthday                | date          | null: false |
 
 Association 
