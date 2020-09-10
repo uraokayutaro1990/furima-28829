@@ -51,8 +51,15 @@ group :development, :test do
   #gem 'rspec-rails', '~> 3.8' 削除する
   gem 'factory_bot_rails', '~> 5.0'
   gem 'rspec-rails', '~> 4.0.0'
-   #9/9追記テストコードのため
+  #9/9追記テストコードのため
   #9/10追記テストコード
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #1つファクトリーボットのインストールのために、56行目は不明
+  gem 'pry-rails'
+  #現在のファイルに誤りがないか確認
+
+
+  #
 end
 
 
