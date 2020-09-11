@@ -8,6 +8,8 @@
     #自分の日記や掲示板に意図しない書き込みがされたりといった被害を受ける可能性がある。対策Appコントローラーとレイアウトに以下のコードを記載
     #exception 例外
   
+    before_action :configure_permitted_parameters
+
     private
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday])

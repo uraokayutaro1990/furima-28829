@@ -37,7 +37,7 @@ Association
 
 Association 
 ・belongs_to :user 
-・has_one :buyer_item 
+・has_one : buyer_item 
 
 ### buyer_itemsテーブル
 | Column             | Type       | Options 
@@ -47,9 +47,9 @@ Association
 
 Association
 
-・belongs_to :user 
-・belongs_to :item
-・has_one :deliver_address
+・belongs_to : user 
+・belongs_to : item
+・has_one : deliver_address
 
 ### deliver_addresses テーブル
 
