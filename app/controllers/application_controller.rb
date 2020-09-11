@@ -9,6 +9,10 @@
     #exception 例外
   
     private
+    def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday])
+    
+    end
 
     #export username ="BASIC_AUTH_USER" 誤りの回答
     #export password ="BASIC_AUTH_PASSWORD" 誤りの回答

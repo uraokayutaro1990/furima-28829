@@ -1,21 +1,11 @@
 # frozen_string_literal: true
 
-class DeviseCreateUserModels < ActiveRecord::Migration[6.0]
-  def changee
-    create_table :user_models do |t|
+class DeviseCreateUsers < ActiveRecord::Migration[6.0]
+  def change
+    create_table :users do |t|
       ## Database authenticatable
-      t.string :name,                  null: false, default: ""
-      t.string :email,                 null: false, default: ""
-      t.string :encrypted_password,    null: false, default: ""
-      t.string :family_name,           null: false 
-      t.string :first_name,            null: false 
-      t.string :family_name_kana,      null: false 
-      t.string :first_name_kana,       null: false 
-      t.date   :birthday,              null: false 
-
-      
-
-      #「t.型名:カラム名」
+      t.string :email,              null: false, default: ""
+      t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
@@ -46,9 +36,9 @@ class DeviseCreateUserModels < ActiveRecord::Migration[6.0]
       t.timestamps null: false
     end
 
-    add_index :user_models, :email,                unique: true
-    add_index :user_models, :reset_password_token, unique: true
-    # add_index :user_models, :confirmation_token,   unique: true
-    # add_index :user_models, :unlock_token,         unique: true
+    add_index :users, :email,                unique: true
+    add_index :users, :reset_password_token, unique: true
+    # add_index :users, :confirmation_token,   unique: true
+    # add_index :users, :unlock_token,         unique: true
   end
 end
