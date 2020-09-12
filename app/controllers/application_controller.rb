@@ -10,8 +10,9 @@
   
     before_action :configure_permitted_parameters
     #9/10追記 袖岡さんに教えてもらった
-    before_action :authenticate_user!
+    #before_action :authenticate_user!
     #9/11追記ログイン機能
+    #9/12削除 ビフォーアクションする記述してしまうと全てのアクションが動く前にこのメソッドが実行されてしまう。
 
     private
     def configure_permitted_parameters
