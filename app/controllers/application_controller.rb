@@ -1,4 +1,5 @@
   class ApplicationController < ActionController::Base
+
     before_action :basic_auth
     #before_actionとは、コントローラーの全てのアクションが実行される前に何らかの処理を行う時に使用するものです。
     #BASIC認証  【 基本認証 】  basic authentication / ベーシック認証 / HTTP基本認証
@@ -8,14 +9,14 @@
     #自分の日記や掲示板に意図しない書き込みがされたりといった被害を受ける可能性がある。対策Appコントローラーとレイアウトに以下のコードを記載
     #exception 例外
   
-    before_action :configure_permitted_parameters
+    before_action :configure_permitted_parameters , if: :devise_controller?
     #9/10追記 袖岡さんに教えてもらった
     #before_action :authenticate_user!
     #9/11追記ログイン機能
     #9/12削除 ビフォーアクションする記述してしまうと全てのアクションが動く前にこのメソッドが実行されてしまう。
 
     private
-    def configure_permitted_parameters
+    def configure_permitted_parameters 
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday])
     end
 
