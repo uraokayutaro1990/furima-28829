@@ -17,7 +17,7 @@ class User < ApplicationRecord
    zyoukenn1 = /\A[ぁ-んァ-ン一-龥]//\A[a-zA-Z0-9]+\z/
    validates :family_name, format: { with: zyoukenn1, message: "は全角で入力してください。"}
    validates :first_name, format: { with: zyoukenn1, message: "は全角で入力してください。"}
-   zyoukenn2 = /\A[ァ-ヶー－]+\z//\A[a-zA-Z0-9]+\z/
+   zyoukenn2 = /\A[ァ-ヶー－]+\z/
    validates :family_name_kana, format: { with: zyoukenn2, message: "は全角カタカナで入力して下さい。"}
    validates :first_name_kana, format:  { with: zyoukenn2, message: "は全角カタカナで入力して下さい。"}
    validates :name           
