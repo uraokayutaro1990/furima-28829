@@ -8,17 +8,16 @@
     #自分の日記や掲示板に意図しない書き込みがされたりといった被害を受ける可能性がある。対策Appコントローラーとレイアウトに以下のコードを記載
     #exception 例外
   
-    # before_action :configure_permitted_parameters
+    before_action :configure_permitted_parameters
     #9/10追記 袖岡さんに教えてもらった
     #before_action :authenticate_user!
     #9/11追記ログイン機能
     #9/12削除 ビフォーアクションする記述してしまうと全てのアクションが動く前にこのメソッドが実行されてしまう。
 
-    # private
-    # def configure_permitted_parameters
-    #   devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday])
-    
-    # end
+    private
+    def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday])
+    end
 
     #export username ="BASIC_AUTH_USER" 誤りの回答
     #export password ="BASIC_AUTH_PASSWORD" 誤りの回答
