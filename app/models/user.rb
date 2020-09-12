@@ -22,9 +22,9 @@ class User < ApplicationRecord
    validates :first_name_kana, format:  { with: zyoukenn2, message: "は全角カタカナで入力して下さい。"}
    validates :nickname           
    validates :birthday          
-   validates :password,         fomat:  { with:/\A[a-z\d]{6,100}+\z/i}
+   validates :password,        format:  { with:/\A[a-z\d]{6,100}+\z/i}
 
-   
+
 
  end
 
