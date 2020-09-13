@@ -4,15 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  #has_many :items
-  #has_many :buyer_items 
-  #belongs_to :user 
-  #has_one :buyer_item 
-  #belongs_to :user 
-  #belongs_to :item
-  #has_one :deliver_address
-  #belongs_to :buyer_item
-
  with_options presence: true do
    zyoukenn1 = /\A[ぁ-んァ-ン一-龥]//\A[a-zA-Z0-9]+\z/
    validates :family_name, format: { with: zyoukenn1, message: "は全角で入力してください。"}
