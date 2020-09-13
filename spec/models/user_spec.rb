@@ -30,10 +30,10 @@ end
         end
       it "重複したemailが存在する場合登録できない" do
         @user.save
-        @user = FactoryBot.build(:user)
-        @user.email = @user.email
-        @user.valid?
-        expect(@user.full_messages).to include("Email has already been taken")
+        another_user = FactoryBot.build(:user)
+        another_user.email = @user.email
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include("Email has already been taken")
       end
       it "passwordが空では登録できない" do
         @user.password = ""
@@ -47,9 +47,9 @@ end
         expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
       end
       it "passwordが半角英数字混合出ないと登録できない" do
-        @user.password = "/\A[a-zA-Z0-9]+\z/"
+        @user.password = "aaa111"
         @user.valid?
-        expect(@user).to include
+        expect(@user.errors.full_messages).to include
       end
       it "passwordが存在してもpassword_confirmationが空では登録できない" do
         @user.password_confirmation = ""
