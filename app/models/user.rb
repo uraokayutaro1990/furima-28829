@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
  with_options presence: true do
-   zyoukenn1 = /\A[ぁ-んァ-ン一-龥]//\A[a-zA-Z0-9]+\z/
+   zyoukenn1 = /\A[ぁ-んァ-ン一-龥a-zA-Z0-9]+\z/
    validates :family_name, format: { with: zyoukenn1, message: "は全角で入力してください。"}
    validates :first_name, format: { with: zyoukenn1, message: "は全角で入力してください。"}
    zyoukenn2 = /\A[ァ-ヶー－]+\z/
