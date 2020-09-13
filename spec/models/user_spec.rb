@@ -49,7 +49,7 @@ describe User do
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
       it "passwordが半角英数字混合出ないと登録できない" do
-        @user.password = "111aaa"
+        @user.password = "/\A[a-zA-Z0-9]+\z/"
         @user.valid?
         expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
       end
