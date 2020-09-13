@@ -15,7 +15,8 @@ RSpec.describe User, type: :model do
         expect(@user).to be_valid
       end
     end
-    end
+end
+
     context '新規登録がうまくいかないとき' do
       it "nameが空だと登録できない" do
         @user.name = ''
@@ -29,10 +30,10 @@ RSpec.describe User, type: :model do
         end
       it "重複したemailが存在する場合登録できない" do
         @user.save
-         @user = FactoryBot.build(:user)
-         @user.email = email
-         @user.valid?
-        expect(another_user.errors.full_messages).to include("Email has already been taken")
+        @user = FactoryBot.build(:user)
+        @user.email = @user.email
+        @user.valid?
+        expect(@user.full_messages).to include("Email has already been taken")
       end
       it "passwordが空では登録できない" do
         @user.password = ""
