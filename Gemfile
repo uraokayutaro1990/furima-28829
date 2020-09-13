@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'devise'
+#9/8追加しました
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -45,6 +47,24 @@ group :development do
   #9/4追記　Rubyの静的コード解析ツール
 end
 
+group :development, :test do
+  #gem 'rspec-rails', '~> 3.8' 削除する
+  gem 'factory_bot_rails', '~> 5.0'
+  gem 'rspec-rails', '~> 4.0.0'
+  #9/9追記テストコードのため
+  #9/10追記テストコード
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  #1つファクトリーボットのインストールのために、56行目は不明
+  gem 'pry-rails'
+  #現在のファイルに誤りがないか確認
+  gem 'faker'
+  #9/13インストールできておらず、テストコードを作成していた
+
+
+  #
+end
+
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
@@ -52,6 +72,9 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
+
+  gem 'rspec-rails', '~> 4.0.0'
+  #9/10
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

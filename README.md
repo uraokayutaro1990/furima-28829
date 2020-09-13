@@ -9,13 +9,12 @@
 | Colum                   | Type     |  Options
 | ----------------------- | ------------- | ----------  |
 | nickname                | string        | null: false | 
-| email	                  | string        | null: false, unique: true |
+| email                   | string        | null: false, unique: true |
 | encrypted_password      | string        | null: false |
-| family_name	            | string        | null: false |
-| first_name	            | string        | null: false |
-| family_name_kana        | string        | null: false |
+| family_name             | string        | null: false |
 | first_name              | string        | null: false |
-| family_name_kana             | string       | null: false |
+| family_name_kana        | string        | null: false |
+| first_name_kana         | string        | null: false |
 | birthday                | date          | null: false |
 
 Association 
@@ -38,7 +37,7 @@ Association
 
 Association 
 ・belongs_to :user 
-・has_one :buyer_item 
+・has_one : buyer_item 
 
 ### buyer_itemsテーブル
 | Column             | Type       | Options 
@@ -48,9 +47,9 @@ Association
 
 Association
 
-・belongs_to :user 
-・belongs_to :item
-・has_one :deliver_address
+・belongs_to : user 
+・belongs_to : item
+・has_one : deliver_address
 
 ### deliver_addresses テーブル
 
