@@ -15,9 +15,7 @@ class User < ApplicationRecord
    validates :birthday          
    validates :password,        format:  { with:/\A[a-z\d]{6,100}+\z/i}
 
-   
-   validates  :price,  presence: true, format: {with: VALID_PRICEL_HALF}, numericality: { only_integer: true,
-   greater_than: 300, less_than: 10000000
+  
    }
 
 end
