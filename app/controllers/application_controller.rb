@@ -15,6 +15,7 @@
     #9/12削除 ビフォーアクションする記述してしまうと全てのアクションが動く前にこのメソッドが実行されてしまう。
 
     private
+    
     def configure_permitted_parameters 
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name,:family_name,:first_name,:family_name_kana,:first_name_kana,:birthday])
     end
