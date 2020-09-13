@@ -12,11 +12,10 @@ RSpec.describe User, type: :model do
       it "passwordが6文字以上であれば登録できる" do
         @user.password = "000000"
         @user.password_confirmation = "000000"
-        expect(@user.errors.full_messages).to include("password is too long (maximum is 6 characters)")
-      end
+        expect(@user).to be_valid
       end
     end
-    
+    end
     context '新規登録がうまくいかないとき' do
       it "nameが空だと登録できない" do
         @user.name = ''
