@@ -23,6 +23,11 @@ end
         @user.valid?
         expect(@user.errors.full_messages).to include("Name can't be blank")
       end
+      it "emailに@がないと登録できない" do
+        @user.email = "aaaaaaaaa.com"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email is invalid")
+      end
         it "emailが空では登録できない" do
           @user.email = ""
           @user.valid?
@@ -49,7 +54,7 @@ end
       it "passwordが半角英数字混合出ないと登録できない" do
         @user.password = "aaa111"
         @user.valid?
-        expect(@user.errors.full_messages).to include
+        expect(@user.errors.full_messages).to include ("Password confirmation doesn't match Password")
       end
       it "passwordが存在してもpassword_confirmationが空では登録できない" do
         @user.password_confirmation = ""
