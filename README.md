@@ -25,7 +25,7 @@ Association
 ### itemsテーブル
 | Column            | Type       | Options
 | ----------------  | ---------- | ----------- |
-| user_id           | integer    | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
 | name              | string     | null: false |
 | price             | integer    | null: false |
 | text              | text       | null: false |
