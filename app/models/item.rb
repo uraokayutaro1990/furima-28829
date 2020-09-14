@@ -3,9 +3,9 @@ class Item < ApplicationRecord
   has_one_attached :image
   with_options presence: true do
     
-      validates  :image, presence: true, 
+      validates  :image, presence: true 
       validates  :name,  presence: true, format: {with: maxinum: 40},
-      validates  :text,  presence: true format: {with: maxinum: 1000},
+      validates  :text,  presence: true, format: {with: maxinum: 1000},
       validates  :category,  presence: true
       validates  :condition,  presence: true
       validates  :postage,  presence: true
