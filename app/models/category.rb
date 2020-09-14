@@ -5,5 +5,5 @@ class Category < ActiveHash::Base
     {id: 6, name: 'おもちゃ・ホビー・グッズ'}, {id: 7, name: '家電・スマホ・カメラ'}, {id: 8, name: 'スポーツ・レジャー'}, 
     {id: 9, name: 'おもちゃ・ホビー・グッズ'}, {id: 10, name: '家電・スマホ・カメラ'},{id: 10, name: 'ハンドメイド'},
     {id: 11, name: 'その他'}
- ]
+
 end
