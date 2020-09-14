@@ -1,2 +1,2 @@
-class Prefecture < ApplicationRecord
+class Prefecture < ActiveHash::Base
 end

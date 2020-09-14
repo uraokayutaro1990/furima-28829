@@ -1,2 +1,2 @@
-class DeliveryTime < ApplicationRecord
+class DeliveryTime < ActiveHash::Base
 end

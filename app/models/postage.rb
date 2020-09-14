@@ -1,2 +1,2 @@
-class Postage < ApplicationRecord
+class Postage < ActiveHash::Base
 end
