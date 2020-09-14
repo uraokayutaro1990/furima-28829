@@ -25,7 +25,7 @@ Association
 ### itemsテーブル
 | Column            | Type       | Options
 | ----------------  | ---------- | ----------- |
-| user_id | integer | null: false, foreign_key: true |
+| user_id           | integer    | null: false, foreign_key: true |
 | name              | string     | null: false |
 | price             | integer    | null: false |
 | text              | text       | null: false |
@@ -55,7 +55,7 @@ Association
 
 | Column           | Type       | Options
 | ---------------- | ---------- | ----------- |
-| buyer_item_id   | integer    | null: false , foreign: true |
+| buyer_item_id    | integer    | null: false , foreign: true |
 | zip_code         | string     | null: false |
 | prefecture_id    | integer    | null: false |
 | city             | string     | null: false |
