@@ -26,10 +26,8 @@ class ItemsController < ApplicationController
     params.require(:item).permit( :image, :name , :price , :text , :postage_id, :category_id ,:condition_id , :prefecture_id , :delivery_time_id).merge(user_id: current_user.id )
   end
 
-
 #paramas パラメーター
 #フォームなどによって送られてきた情報（パラメーター）を取得するメソッドです。
 #送られてくる情報には、「投稿フォームなどPOSTで送信されたデータ」と「検索フォームなどGETで送信されURLにクエリとして入るデータ」があります。
-
 
 end
