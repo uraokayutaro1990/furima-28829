@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe User, type: :model do
+RSpec.describe Item, type: :model do
   before do
     @item = FactoryBot.build(:item)
   end
@@ -46,3 +46,5 @@ context '情報がないと出品できない' do
     end
   end
 end
+
+#ユーザーのnilに問題がある可能性がある。

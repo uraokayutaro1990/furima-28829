@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
     end
   end
   #出品をクリックした際に使う条件分岐
+  #トップページにリダイレクトする
 
     private
     #クラス内のみアクセス可能

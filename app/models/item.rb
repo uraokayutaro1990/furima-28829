@@ -1,7 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
-  #これで画像が保存できるはず。
   with_options presence: true do
     validates  :image 
     validates  :name, length: {maximum:40}
@@ -16,4 +15,6 @@ class Item < ApplicationRecord
     end
   end
 end
+#文字数を数えるので、formatではなくlengthを使用する
+#0も含めて
 

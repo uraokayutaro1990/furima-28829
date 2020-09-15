@@ -14,4 +14,5 @@ class CreateItems < ActiveRecord::Migration[6.0]
     end
   end
 end
+#references 外部から引用したもの
 
