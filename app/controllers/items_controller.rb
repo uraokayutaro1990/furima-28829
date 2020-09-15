@@ -25,12 +25,6 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit( :image, :name , :price , :text , :postage_id, :category_id ,:condition_id , :prefecture_id , :delivery_time_id).merge(user_id: current_user.id )
   end
-#ここで画像を保存したいが、できていない。
-# def item_params
-#   params.require(:image).permit(:item, :image).merge(user_id: current_user.id)
-# end
-  #こっちで保存できるかも
-
 
 
   #paramas パラメーター
