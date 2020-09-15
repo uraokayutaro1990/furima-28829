@@ -6,7 +6,6 @@ RSpec.describe Item, type: :model do
   end
 
 describe '商品情報を入力' do
-  context '出品がうまくいくとき' do
     it "全ての値が存在する時、新規登録できる" do
       expect(@item).to be_valid
     end
