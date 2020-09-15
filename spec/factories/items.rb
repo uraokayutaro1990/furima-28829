@@ -1,10 +1,9 @@
 FactoryBot.define do
   factory :item do    
-
+    association :user
       name  {Faker::Lorem.sentence}           
       price {Faker::Number.between(from: 300 ,to: 9999999)} #=> 1968353479            
       text  {Faker::Lorem.sentence} 
-      user_id {3}        
       category_id {2}      
       condition_id {2}   
       postage_id {1}     

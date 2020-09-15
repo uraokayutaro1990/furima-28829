@@ -1,8 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Item, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+RSpec.describe User, type: :model do
+  before do
+    @item = FactoryBot.build(:item)
+  end
 
 describe '商品情報を入力' do
   context '出品がうまくいくとき' do
@@ -13,7 +14,6 @@ describe '商品情報を入力' do
 end
 
 context '情報がないと出品できない' do
-  context 出品画像がなければ出品できない do
     it "画像を保存" do
       @item.image= nil
       @item.valid?
