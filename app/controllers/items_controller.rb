@@ -27,18 +27,9 @@ class ItemsController < ApplicationController
   end
 
 
-  #paramas パラメーター
-  #フォームなどによって送られてきた情報（パラメーター）を取得するメソッドです。
- #送られてくる情報には、「投稿フォームなどPOSTで送信されたデータ」と「検索フォームなどGETで送信されURLにクエリとして入るデータ」があります。
+#paramas パラメーター
+#フォームなどによって送られてきた情報（パラメーター）を取得するメソッドです。
+#送られてくる情報には、「投稿フォームなどPOSTで送信されたデータ」と「検索フォームなどGETで送信されURLにクエリとして入るデータ」があります。
 
-#  #def post_params
-#    params.require(:post).permit(:title, :content, images_attributes: [:src]).merge(user_id: current_user.id)
-#    byebug
-# end
-#    def set_post
-#    @post = Post.find(params[:id])
-#    end
-# (byebug) params
 
-# end
 end
