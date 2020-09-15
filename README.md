@@ -19,10 +19,10 @@
 
 Association 
 
-・has_many : items
+・has_many : items 
 ・has_many : buyer_items 
 
-### itemsテーブル
+### itemsテーブル 
 | Column            | Type       | Options
 | ----------------  | ---------- | ----------- |
 | user              | references | null: false, foreign_key: true |
@@ -30,7 +30,7 @@ Association
 | price             | integer    | null: false |
 | text              | text       | null: false |
 | category_id       | integer    | null: false |
-| condition_id	    | integer    | null: false |
+| condition_id      | integer    | null: false |
 | postage_id        | integer    | null: false |
 | prefecture_id     | integer    | null: false |
 | delivery_time_id  | integer    | null: false |
