@@ -32,20 +32,40 @@ context '情報がないと出品できない' do
       @item.valid?
       expect(@item.errors.full_messages).to include("Category can't be blank")
     end
+    it "カテゴリ" do
+      @item.category_id = 0
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Category must be other than 0")
+    end
     it "商品の状態" do
       @item.condition_id = ''
       @item.valid?
       expect(@item.errors.full_messages).to include("Condition can't be blank")
+    end
+    it "商品の状態" do
+      @item.condition_id = 0
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Condition must be other than 0")
     end
       it "発送元の地域" do
       @item.prefecture_id = ''
       @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
     end
+    it "発送元の地域" do
+      @item.prefecture_id = 0
+      @item.valid?
+        expect(@item.errors.full_messages).to include("Prefecture must be other than 0")
+    end
     it "発送までの日数" do
       @item.delivery_time_id = ''
       @item.valid?
         expect(@item.errors.full_messages).to include("Delivery time can't be blank")
+    end
+    it "発送までの日数" do
+      @item.delivery_time_id = 0
+      @item.valid?
+        expect(@item.errors.full_messages).to include("Delivery time must be other than 0")
     end
     it "値段" do
       @item.price = ''
@@ -63,7 +83,7 @@ context '情報がないと出品できない' do
       expect(@item.errors.full_messages).to include ("Price nothing")
     end
     it "販売価格が￥300~￥9,999,999の間であること" do
-      @item.price = 200　
+      @item.price = 200
       @item.valid?
       expect(@item.errors.full_messages).to include("Price nothing")
     end
@@ -81,3 +101,4 @@ context '情報がないと出品できない' do
 end
 
 #ユーザーのnilに問題がある可能性がある。
+#active_hashを使用しているカラムに関してはid:0が選択されている場合に出品できないことについてそれぞれテストを行いましょう。
