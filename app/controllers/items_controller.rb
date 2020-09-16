@@ -24,12 +24,19 @@ class ItemsController < ApplicationController
   #出品をクリックした際に使う条件分岐
   #トップページにリダイレクトする
 
+  def show
+     @item = Item.find(params[:id])
+  end
+#1つだけ表示させる、クリックしたものを
+
     private
     #クラス内のみアクセス可能
 
   def item_params
     params.require(:item).permit( :image, :name , :price , :text , :postage_id, :category_id ,:condition_id , :prefecture_id , :delivery_time_id).merge(user_id: current_user.id )
   end
+
+
 
 #paramas パラメーター
 #フォームなどによって送られてきた情報（パラメーター）を取得するメソッドです。
