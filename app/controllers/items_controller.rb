@@ -29,12 +29,21 @@ class ItemsController < ApplicationController
   end
 #1つだけ表示させる、クリックしたものを
 
+def move_to_index
+  unless user_signed_in?
+    redirect_to action: :index
+  end
+end
+#ログインしたユーザーのみ一覧に飛べる
+
     private
     #クラス内のみアクセス可能
 
   def item_params
     params.require(:item).permit( :image, :name , :price , :text , :postage_id, :category_id ,:condition_id , :prefecture_id , :delivery_time_id).merge(user_id: current_user.id )
   end
+
+
 
 
 
