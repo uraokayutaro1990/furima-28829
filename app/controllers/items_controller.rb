@@ -29,6 +29,8 @@ class ItemsController < ApplicationController
   end
 #1つだけ表示させる、クリックしたものを
 
+
+
     private
     #クラス内のみアクセス可能
 
