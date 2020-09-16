@@ -1,11 +1,15 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!,except:index
+
+  before_action :authenticate_user!,except: :index
   def index 
+    @items = Item.includes(:user).order(created_at: :DESC) # 出品している商品を取得するのに使う
+    @orders = Order.all # 売り切れている商品の確認に使う
+
   end
   #全て取得してくる
 
   def new
-  @item=Item.new
+    @item=Item.new
   end
   #新しいアイテムをインスタンス変数に代入
 
@@ -32,3 +36,6 @@ class ItemsController < ApplicationController
 #送られてくる情報には、「投稿フォームなどPOSTで送信されたデータ」と「検索フォームなどGETで送信されURLにクエリとして入るデータ」があります。
 
 end
+
+
+
