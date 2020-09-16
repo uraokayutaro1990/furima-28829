@@ -53,7 +53,7 @@ context '情報がないと出品できない' do
       @item.valid?
       expect(@item.errors.full_messages).to include("Price can't be blank")
     end
-    it "passwordが半角英数字混合出ないと登録できない" do
+    it "価格が半角英数字混合出ないと登録できない" do
       @item.price = "aaa111"
       @.valitemid?
       expect(@item.errors.full_messages).to include ("Price confirmation doesn't match Price")
