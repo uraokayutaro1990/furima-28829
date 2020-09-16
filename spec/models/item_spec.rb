@@ -5,12 +5,11 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
 
-describe '商品情報を入力' do
+  describe '商品情報を入力' do
     it "全ての値が存在する時、新規登録できる" do
       expect(@item).to be_valid
     end
   end
-end
 
 context '情報がないと出品できない' do
     it "画像1枚必須" do
@@ -53,9 +52,9 @@ context '情報がないと出品できない' do
       @item.valid?
       expect(@item.errors.full_messages).to include("Price can't be blank")
     end
-    it "価格が半角英数字混合出ないと登録できない" do
-      @item.price = "aaa111"
-      @.valitemid?
+    it "価格が全角数字登録できない" do
+      @item.price = "１１１１１１"
+      @item.valid?
       expect(@item.errors.full_messages).to include ("Price confirmation doesn't match Price")
     end
     it "販売価格が半角英数字混合出ないと登録できない" do
@@ -64,9 +63,15 @@ context '情報がないと出品できない' do
       expect(@user.errors.full_messages).to include ("Price confirmation doesn't match Price")
     end
     it "販売価格が￥300~￥9,999,999の間であること" do
-      @item.user = Number.between(from: 300 ,to: 9999999)} #=> 1968353479   
+      @item.price = "200"
       @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
+    end
+    it "販売価格が￥300~￥9,999,999の間であること" do
+      @item.price = "10000000"  
+      @item.valid?
+        expect(@item.errors.full_messages).to include("Price can't be blank")
+    end
     it "ユーザー" do
       @item.user = nil
       @item.valid?
