@@ -29,6 +29,14 @@ class ItemsController < ApplicationController
   end
 #1つだけ表示させる、クリックしたものを
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+  end
 
 
     private
