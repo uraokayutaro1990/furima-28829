@@ -44,7 +44,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
-  #9/4追記　Rubyの静的コード解析ツール
+  #9/4追記Rubyの静的コード解析ツール
 end
 
 group :development, :test do
@@ -59,9 +59,15 @@ group :development, :test do
   #現在のファイルに誤りがないか確認
   gem 'faker'
   #9/13インストールできておらず、テストコードを作成していた
+  gem 'active_hash'
+  #9/13 追記、active_hash_appの中で実行}
+  gem 'mini_magick'
+  gem 'image_processing', '~> 1.2'
+  #9/14追記画像をいれるため
+  
 
 
-  #
+
 end
 
 

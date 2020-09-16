@@ -23,10 +23,9 @@
     #export username ="BASIC_AUTH_USER" 誤りの回答
     #export password ="BASIC_AUTH_PASSWORD" 誤りの回答
 
-
     def basic_auth
       #認証 (auth)
-      authenticate_or_request_with_http_basi/\A[ァ-ヶー－]+\z/c do |username, password|
+      authenticate_or_request_with_http_basic do |username, password|
         #Ruby on RailsでBasic認証を実装するためのメソッドです。
         #ブロックを開き、ブロック内部でusernameとpasswordを設定することでBasic認証を利用できます。
         username == ENV["BASIC_AUTH_USER"] && password == ENV["BASIC_AUTH_PASSWORD"]

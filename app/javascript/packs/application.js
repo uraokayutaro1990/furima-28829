@@ -4,9 +4,12 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
+// リロードした際に起動が確認できなかったので、一旦外しておきます
+// !!!!!!!!!!!!!!注意!!!!!!!!!!!!!!
 require("@rails/activestorage").start()
 require("channels")
+require("../item")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

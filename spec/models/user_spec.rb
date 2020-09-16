@@ -1,10 +1,11 @@
 require 'rails_helper' 
+FactoryBot.use_pararent_strategy= false
 RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
   end
 
-  describe 'ユーザー新規登録' do
+  describe '' do
     context '新規登録がうまくいくとき' do
       it "nameとemail、passwordとpassword_confirmationが存在すれば登録できる" do
         expect(@user).to be_valid

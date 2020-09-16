@@ -19,18 +19,18 @@
 
 Association 
 
-・has_many : items
+・has_many : items 
 ・has_many : buyer_items 
 
-### itemsテーブル
+### itemsテーブル 
 | Column            | Type       | Options
 | ----------------  | ---------- | ----------- |
-| user_id | integer | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
 | name              | string     | null: false |
 | price             | integer    | null: false |
 | text              | text       | null: false |
 | category_id       | integer    | null: false |
-| condition_id	    | integer    | null: false |
+| condition_id      | integer    | null: false |
 | postage_id        | integer    | null: false |
 | prefecture_id     | integer    | null: false |
 | delivery_time_id  | integer    | null: false |
@@ -55,7 +55,7 @@ Association
 
 | Column           | Type       | Options
 | ---------------- | ---------- | ----------- |
-| buyer_item_id   | integer    | null: false , foreign: true |
+| buyer_item_id    | integer    | null: false , foreign: true |
 | zip_code         | string     | null: false |
 | prefecture_id    | integer    | null: false |
 | city             | string     | null: false |
