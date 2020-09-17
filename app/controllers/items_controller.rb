@@ -33,15 +33,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy if current_user == @item.user  
+    @item.destroy if current_user.id == @item.user.id  
      redirect_to root_path 
   end
 
   def update
-    @item.update(item_params) if current_user == @item.user  
+    @item.update(item_params) if current_user.id  == @item.user.id  
     redirect_to root_path
   end
-
 
     private
     #クラス内のみアクセス可能
@@ -54,6 +53,7 @@ class ItemsController < ApplicationController
       @item = Item.find(params[:id])
    #1つだけ表示させる、クリックしたものを
   end
+
 
 
 
