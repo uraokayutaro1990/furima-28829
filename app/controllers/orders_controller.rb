@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!,only: [:index]
   def index
     @item = Item.find(params[:item_id])
+    @order = Order.new
   end 
 
   def create
@@ -15,6 +16,7 @@ class OrdersController < ApplicationController
        render 'index'
     end
   end
+
 
 private
 
@@ -33,6 +35,12 @@ def pay_item
 end
 
 end
+
+
+def order_params
+  params.permit(:price, :token)
+end
+
 
 #orders テーブルのレコードに必要な情報は「商品」と「購入者」である。
 #購入するのページに飛べるように,index.ok
