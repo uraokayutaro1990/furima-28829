@@ -23,6 +23,7 @@ def order_params
 end
 
 def pay_item
+
   Payjp.api_key = "sk_test_7ecfd640f6a7c2d7a07a46fe"
   Payjp::Charge.create(
     amount: @item.price,
