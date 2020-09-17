@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 private
 
 def order_params
-  params.permit( :token :item_id ) marge (:user_id )
+  params.permit(:token,:item_id ).merge(user_id: current_user.id )
 end
 
 end
