@@ -56,12 +56,12 @@ Association
 | Column           | Type       | Options
 | ---------------- | ---------- | ----------- |
 | buyer_item_id    | integer    | null: false , foreign: true |
-| zip_code         | string     | null: false |
+| postal_code_id   | string     | null: false |
 | prefecture_id    | integer    | null: false |
 | city             | string     | null: false |
 | address          | string     | null: false | 
-| building          | string     | 
-| telephone        | string     | null: false |
+| building         | string     | 
+| phone_number     | string     | null: false |
 
 ### Association
 ・belongs_to :buyer_item

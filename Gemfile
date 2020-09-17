@@ -66,6 +66,10 @@ group :development, :test do
   #9/14追記画像をいれるため
   gem 'payjp'
   #pay.jpインストール
+  group :production do
+  gem 'rails_12factor'
+  end
+  #デプロイするため
   
 
 
