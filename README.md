@@ -37,7 +37,7 @@ Association
 
 Association 
 ・belongs_to :user 
-・has_one : buyer_item 
+・has_one : order 
 
 ### buyer_itemsテーブル
 | Column             | Type       | Options 

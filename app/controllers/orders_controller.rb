@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    @item = Item.find(params[:item_id :current_user_id])
+    @item = Item.find(params[:item_id])
   end 
 end
 
