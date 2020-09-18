@@ -64,6 +64,12 @@ group :development, :test do
   gem 'mini_magick'
   gem 'image_processing', '~> 1.2'
   #9/14追記画像をいれるため
+  gem 'payjp'
+  #pay.jpインストール
+  group :production do
+  gem 'rails_12factor'
+  end
+  #デプロイするため
   
 
 
