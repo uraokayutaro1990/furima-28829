@@ -96,4 +96,7 @@ end
   gem 'active_hash'
 #9/18 本番環境になかったため、再度アップ
 #bundle installした
+ gem 'payjp'
+ #9/18 本番環境になかったため、再度アップ
+#bundle installした
 
