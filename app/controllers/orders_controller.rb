@@ -1,13 +1,12 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!,only: [:index]
+  before_ation  :set_item,only: [:index,:create] 
   def index
-    @item = Item.find(params[:item_id])
     @order = Order.new
     @address = Address.new 
   end 
 
   def create 
-    @item = Item.find(params[:item_id])
     buy_params = { 
       item_id: order_params[:item_id],
       user_id: order_params[:user_id]
@@ -19,7 +18,8 @@ class OrdersController < ApplicationController
       city:order_params[:city],
       addresses: order_params[:addresses],
       building: order_params[:building],
-      phone_number: order_params[:phone_number] 
+      phone_number: order_params[:phone_number],
+      token: order_params[:token] 
     }
     @address = Address.new(address_params)
     if @address.valid?
@@ -37,6 +37,10 @@ private
 
 def order_params
   params.permit(:price, :token,:item_id , :authenticity_token, :postal_code, :prefecture_id, :city, :addresses, :building, :phone_number ).merge(user_id: current_user.id )
+end
+
+def set_item 
+  @item = Item.find(params[:item_id])
 end
 
 def pay_item
