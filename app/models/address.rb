@@ -14,6 +14,7 @@ class Address < ApplicationRecord
          with:format_phone,
          message:"error"
     }
+    validates :order_id
     validates :token
   end
 end
