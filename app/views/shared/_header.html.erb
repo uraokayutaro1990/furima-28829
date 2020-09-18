@@ -16,15 +16,14 @@
     </ul>
     <ul class='lists-right'>
 
-
       <% if user_signed_in? %>
-      <li><%= link_to current_user.name, "prefix", class: "user-nickname" %></li>
+      <li><%= link_to current_user.name, "#", class: "user-nickname" %></li>
       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
        <% else %>
       <li><%= link_to 'ログイン', "/users/sign_in", class: "login" %></li>
       <li><%= link_to '新規登録', "/users/sign_up", class: "sign-up" %></li>
        <% end %>
-       
+     
     
     </ul>
   </div>
