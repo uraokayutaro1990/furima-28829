@@ -95,4 +95,5 @@ end
 #9/5 作ったベーシック認証をデプロイするために、rails_12factorを導入
   gem 'active_hash'
 #9/18 本番環境になかったため、再度アップ
+#bundle installした
 
