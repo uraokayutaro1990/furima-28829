@@ -59,8 +59,8 @@ group :development, :test do
   #現在のファイルに誤りがないか確認
   gem 'faker'
   #9/13インストールできておらず、テストコードを作成していた
-  gem 'active_hash'
-  #9/13 追記、active_hash_appの中で実行}
+  # gem 'active_hash'
+  # #9/13 追記、active_hash_appの中で実行}
   gem 'mini_magick'
   gem 'image_processing', '~> 1.2'
   #9/14追記画像をいれるため
@@ -71,8 +71,6 @@ group :development, :test do
   end
   #デプロイするため
   
-
-
 
 end
 
@@ -95,4 +93,6 @@ group :production do
   gem 'rails_12factor'
 end
 #9/5 作ったベーシック認証をデプロイするために、rails_12factorを導入
+  gem 'active_hash'
+#9/18 本番環境になかったため、再度アップ
 
