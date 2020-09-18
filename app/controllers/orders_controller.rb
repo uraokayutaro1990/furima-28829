@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
     @item = Item.find(params[:item_id])
     @order = Order.new(order_params)
     @address = Address.new(order_params)
+    binding.pry
     if @order.valid?
        pay_item
        @order.save
@@ -24,7 +25,7 @@ class OrdersController < ApplicationController
 private
 
 def order_params
-  params.permit(:token,:item_id ).merge(user_id: current_user.id )
+  params.permit(:price, :token,:item_id , :authenticity_token, :postal_code, :prefecture_id, :ctiy, :addresses, :building, :phone_number ).merge(user_id: current_user.id )
 end
 
 def pay_item
@@ -37,12 +38,7 @@ def pay_item
   )
 end
 
-end
 
-
-def order_params
-  params.permit(:price, :token)
-end
 
 
 #orders テーブルのレコードに必要な情報は「商品」と「購入者」である。
