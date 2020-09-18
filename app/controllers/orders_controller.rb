@@ -22,15 +22,14 @@ class OrdersController < ApplicationController
       phone_number: order_params[:phone_number] 
     }
     @address = Address.new(address_params)
-    binding.pry
-    if @order.valid?
+    if @address.valid?
        pay_item
        @order.save
        @address.order_id = @order.id
        @address.save
       return redirect_to root_path
     else
-       render 'index'
+       render 'orders/index'
     end
   end
 
