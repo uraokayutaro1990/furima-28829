@@ -53,6 +53,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   #9/9追記テストコードのため
   #9/10追記テストコード
+  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   #1つファクトリーボットのインストールのために、56行目は不明
   gem 'pry-rails'
@@ -65,7 +66,7 @@ group :development, :test do
   gem 'image_processing', '~> 1.2'
   #9/14追記画像をいれるため
   gem 'payjp'
-  #pay.jpインストール
+  #pay.jpインストール テストコードに作成していた
   group :production do
   gem 'rails_12factor'
   end
