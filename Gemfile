@@ -100,4 +100,6 @@ end
  gem 'payjp'
  #9/18 本番環境になかったため、再度アップ
 #bundle installした
+ gem "aws-sdk-s3", require: false
+ #config.active_storage.service = :local画像をS3で保存するためにインストール
 
