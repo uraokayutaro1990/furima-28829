@@ -27,7 +27,6 @@ class OrdersController < ApplicationController
        pay_item
        @order.save
        @address.order_id = @order.id
-       binding.pry
        #@oder.idに@order.saveしたものが保存される
        #@order = Order.new(buy_params)で取得したもの
        # buy_params = { から情報をもらってきた
