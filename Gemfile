@@ -102,4 +102,5 @@ end
 #bundle installした
  gem "aws-sdk-s3", require: false
  #config.active_storage.service = :local画像をS3で保存するためにインストール
+ #9/27
 
