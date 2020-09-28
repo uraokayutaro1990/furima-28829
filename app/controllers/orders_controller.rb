@@ -19,13 +19,20 @@ class OrdersController < ApplicationController
       addresses: order_params[:addresses],
       building: order_params[:building],
       phone_number: order_params[:phone_number],
-      token: order_params[:token] 
+      token: order_params[:token],
+      order_id: 0
     }
     @address = Address.new(address_params)
     if @address.valid?
        pay_item
        @order.save
        @address.order_id = @order.id
+       binding.pry
+       #@oder.idに@order.saveしたものが保存される
+       #@order = Order.new(buy_params)で取得したもの
+       # buy_params = { から情報をもらってきた
+       # item_id: order_params[:item_id],
+       # user_id: order_params[:user_id]
        @address.save
       return redirect_to root_path
     else
