@@ -7,7 +7,8 @@ class Address < ApplicationRecord
          with:format_zip,
          message:"error"
     }
-    validates :prefecture ,numericality: { other_than: 0 } 
+    validates :prefecture ,numericality: { other_than: 0 }
+    #数値のみを許可
     validates :city
     validates :addresses
     validates :phone_number,format:{
