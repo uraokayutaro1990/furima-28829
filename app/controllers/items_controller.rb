@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
   def index 
     @items = Item.includes(:user).order(created_at: :DESC) # 出品している商品を取得するのに使う
     @orders = Order.all # 売り切れている商品の確認に使う
-
   end
   #全て取得してくる
 
